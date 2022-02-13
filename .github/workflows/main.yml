@@ -1,0 +1,30 @@
+name: create clash rule providers
+
+on:
+  push:
+    branches:
+      - master  # Set a branch to deploy
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+      - name: create rule providers
+        run: |
+          rm -rf Clash/Providers/Ruleset
+          cp -rf Clash/Ruleset Clash/Providers/Ruleset
+          gsed -i "/,/ s/^/  - /" $(ls Clash/Providers/Ruleset)
+          gsed -i "1i\payload:" $(ls Clash/Providers/Ruleset)
+          gsed -i "/#/ s/^/  /" $(ls Clash/Providers/Ruleset)
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
