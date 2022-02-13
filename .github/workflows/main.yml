@@ -21,9 +21,9 @@ jobs:
           rm -rf Clash/Providers/Ruleset
           cp -rf Clash/Ruleset Clash/Providers/Ruleset
           cd Clash/Providers/Ruleset
-          sed -i "/,/ s/^/  - /" $ls
-          sed -i "1i\payload:" $ls
-          sed -i "/#/ s/^/  /" $ls
+          sed -i "/,/ s/^/  - /" $(ls -l|awk '{print $NF}'|sed '1d')
+          sed -i "/#/ s/^/  /" $(ls -l|awk '{print $NF}'|sed '1d')
+          sed -i "1i\payload:" $(ls -l|awk '{print $NF}'|sed '1d')
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
