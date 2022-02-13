@@ -20,9 +20,9 @@ jobs:
           git checkout master
           rm -rf Clash/Providers/Ruleset
           cp -rf Clash/Ruleset Clash/Providers/Ruleset
-          gsed -i "/,/ s/^/  - /" $(ls Clash/Providers/Ruleset)
-          gsed -i "1i\payload:" $(ls Clash/Providers/Ruleset)
-          gsed -i "/#/ s/^/  /" $(ls Clash/Providers/Ruleset)
+          sed -i "/,/ s/^/  - /" $(ls Clash/Providers/Ruleset)
+          sed -i "1i\payload:" $(ls Clash/Providers/Ruleset)
+          sed -i "/#/ s/^/  /" $(ls Clash/Providers/Ruleset)
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
