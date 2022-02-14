@@ -23,4 +23,3 @@ payload:
   - IP-CIDR,118.26.32.0/23,no-resolve
   - IP-CIDR,118.26.120.0/24,no-resolve
   - IP-CIDR,223.119.62.225/28,no-resolve
-  - URL-REGEX,^https?:\/\/int[\w-\.]+iqiyi\.com
