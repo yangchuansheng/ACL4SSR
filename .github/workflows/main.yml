@@ -26,6 +26,7 @@ jobs:
           sed -i "1i\payload:" $(ls -l|awk '{print $NF}'|sed '1d')
           sed -i "/USER-AGENT/d" $(ls -l|awk '{print $NF}'|sed '1d')
           sed -i "/PROCESS-NAME/d" $(ls -l|awk '{print $NF}'|sed '1d')
+          sed -i "/URL-REGEX/d" $(ls -l|awk '{print $NF}'|sed '1d')
           for i in $(ls -l|awk '{print $NF}'|sed '1d'|awk -F'.' '{print $1}'); do mv $i.list $i.yaml; done
 
       - name: Deploy
