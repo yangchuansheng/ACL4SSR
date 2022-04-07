@@ -1513,9 +1513,12 @@
 (^|\.)gov\.cn$
 (^|\.)net\.cn$
 (^|\.)org\.cn$
-(^|\.)中国$
-(^|\.)公司$
-(^|\.)网络$
+## .中国 => punycode
+(^|\.)xn--fiqs8s$
+## .公司 => punycode
+(^|\.)xn--55qx5d$
+## .网络 => punycode
+(^|\.)xn--io0a7i$
 
 # 中国国内常见域名关键词直连
 (^|\.)\w*-cn\w*\.\w*$
@@ -1664,6 +1667,7 @@
 (^|\.)toutiaoimg\.com$
 (^|\.)toutiaopage\.com$
 (^|\.)wukong\.com$
+(^|\.)zijieapi\.com$
 (^|\.)zijieimg\.com$
 (^|\.)zjbyte\.com$
 (^|\.)zjcdn\.com$
@@ -2067,7 +2071,6 @@
 (^|\.)lizhi\.fm$
 (^|\.)lizhi\.io$
 (^|\.)lizhifm\.com$
-(^|\.)loli\.net$
 (^|\.)luoo\.net$
 (^|\.)lvmama\.com$
 (^|\.)lxdns\.com$
@@ -2095,7 +2098,6 @@
 (^|\.)oschina\.net$
 (^|\.)ourdvs\.com$
 (^|\.)overcast\.fm$
-(^|\.)paypal\.com$
 (^|\.)polyv\.net$
 (^|\.)qbox\.me$
 (^|\.)qcloud\.com$
@@ -2122,7 +2124,6 @@
 (^|\.)sf-express\.com$
 (^|\.)shumilou\.net$
 (^|\.)simplecd\.me$
-(^|\.)sm\.ms$
 (^|\.)smzdm\.com$
 (^|\.)snwx\.com$
 (^|\.)soufunimg\.com$
