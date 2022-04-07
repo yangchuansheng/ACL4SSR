@@ -1,9 +1,9 @@
 name: create clash rule providers
 
 on:
+  workflow_dispatch:
   push:
     branches:
-      - master  # Set a branch to deploy
       - main
 
 jobs:
